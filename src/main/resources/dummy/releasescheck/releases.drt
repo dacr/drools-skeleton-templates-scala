@@ -1,0 +1,16 @@
+template header
+name
+release
+
+package dummy.releasescheck;
+
+template "SoftwareReleaseCheckRule"
+
+rule "@{name} check"
+when
+  Software( name == "@{name}", release < @{release} )
+then
+  insert("Update @{name} to @{release} or better");
+end
+
+end template

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.drools.org/xsd/kmodule">
+
+    <kbase name="HelloKB" packages="dummy.hello" eventProcessingMode="cloud" equalsBehavior="equality">
+        <ksession name="HelloKS" default="true"/>
+    </kbase>
+
+    <kbase name="ReleasesCheckKB" packages="dummy.releasescheck" equalsBehavior="equality">
+        <ruleTemplate dtable="dummy/releasescheck/releases.xls"
+                      template="dummy/releasescheck/releases.drt"
+                      row="2"
+                      col="1"/>
+        <ksession name="ReleasesCheckKS" default="true" type="stateful"/>
+    </kbase>
+
+</kmodule>

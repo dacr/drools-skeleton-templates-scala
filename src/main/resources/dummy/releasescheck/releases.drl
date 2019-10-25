@@ -1,0 +1,12 @@
+package dummy.releasescheck
+
+declare Software
+  name: String
+  release: int
+end
+
+rule "init"
+when
+then
+  insert(new Software("java", 5));
+end
